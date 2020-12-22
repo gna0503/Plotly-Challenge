@@ -1,0 +1,156 @@
+function handleSubmit() {
+  // Prevent the page from refreshing
+  d3.event.preventDefault();
+
+  // Select the input value from the form
+  var sample = d3.select("#selDataset").node().value;
+  console.log(sample);
+
+  // clear the input value
+  d3.select("#selDataset").node().value = "";
+
+  // Build the plot with the new stock
+  buildPlot(sample);
+}
+
+
+
+
+// function buildPlot(sample) {
+// d3.json("samples.json").then(function(data) {
+//   // console.log(data);
+//   otuData = data.samples;
+//   console.log(data);
+//   var sampleData = otuData.filter(x=>x.id===sample);
+//   console.log(sampleData);
+  
+//   // sampleData = sampleData.sort(function(a,b) {
+//   //       return parseFloat(b[0].sample_values) - parseFloat(a[0].sample_values);
+//   //   });
+//   sample
+//   var sortedData = sampleData.sort((b, a) => b.sample_values - a.sample_values);
+//   // console.log(sortedData);
+//   // var reversedData = sortedData.reverse();
+//   // console.log(reversedData);
+  
+//   // console.log(reversedData[0].sample_values);
+
+//   //   }
+  
+//   // sample_values = [];
+//   // otu_ids = [];
+//   // otu_labels = [];
+  
+//   // }
+//   // sample = otuData
+// });
+
+// }
+// buildPlot("940");
+// // function buildPlot(sample) {
+
+// //   d3.json("samples.json").then(function(data) {
+    
+// //     console.log(data);
+// //     otuData = data.samples;
+
+
+// //   });
+// // }
+
+
+
+
+
+
+
+
+
+
+
+
+// // d3.json("samples.json").then(function(data) {
+    
+// //     console.log(data.samples);
+// //     otuDatas = data.samples;
+// //     otuDatas.forEach(otuData => {
+// //         // otu_ids = otuData.otu_ids;
+// //         console.log(otuData);
+// //         // Sort the data array using the sample_values
+
+// //         // Slice the first 10 objects for plotting
+// //         otuData = otuData.slice(0, 10);
+// //         // Reverse the array due to Plotly's defaults
+// //         otuData = otuData.reverse();
+
+// //           // Trace1 for the Greek Data
+// //   var trace1 = {
+// //     x: otuData.map(row => row.sample_values),
+// //     y: data.map(row => row.otu_ids),
+// //     text: data.map(row => row.otu_labels),
+// //     // name: "Otu Data",
+// //     type: "bar",
+// //     orientation: "h"
+// //   };
+
+// //   // data
+// //   var chartData = [trace1];
+
+// //   // Apply the group bar mode to the layout
+// //   var layout = {
+// //     title: "Otu Data",
+// //     margin: {
+// //       l: 100,
+// //       r: 100,
+// //       t: 100,
+// //       b: 100
+// //     }
+// //   };
+
+// //   // Render the plot to the div tag with id "plot"
+// //   Plotly.newPlot("plot", chartData, layout);
+// //     });
+
+// // });
+
+
+
+// function init(){
+//   var selector = d3.select("#selDataset");
+//   d3.json("samples.json").then((data)=>{
+
+//       var selected_data = data.samples;
+//       //data.samples;
+//       var new_1 = selected_data.filter(d=>d.id==="940");
+//       console.log(new_1);
+//       //Created two arrays which sample values and otu_ids
+//       var arr1 = new_1[0].sample_values;
+//       var arr2 = new_1[0].otu_ids;
+
+
+
+//       //Converted them in to JSON object
+//       var obj = {};
+//       for (var i = 0; i < arr1.length; i++) {
+//       obj[arr2[i]] = arr1[i];
+    
+//       }
+//         console.log(obj);
+//       //Creating empty array
+//       var sortable = [];
+//       for (var i in obj) {
+//           //Pushing it in the empty array
+//           sortable.push([i, obj[i]]);
+//       }
+//       console.log(sortable);
+//       //Sorting the array Ascending!
+//       sortable.sort(function(b, a) {
+//           return a[1] - b[1];
+//       });
+//       console.log(sortable);
+
+
+//  });
+// }
+
+// init()
